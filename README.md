@@ -1,4 +1,4 @@
-This is a weather application using created using openweather API and used Spring Boot
+This is a weather application  created using openweather API and used Spring Boot
 With this you can search the current weather of any area using zip code.
 After getting the results you can comment on the particular city. And the previous comments will be displayed
 There is also an option to Upvote for the particular comment.
