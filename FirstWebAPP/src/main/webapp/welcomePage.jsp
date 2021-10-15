@@ -25,12 +25,7 @@
 
 
 
-<div id = "dispalyTemperatureData">
-<label id = "actualTemp">Actual Temperature: ${actualTemperatureCelsius} &#8451</label><br>
-<label id = "maxTemp">Maximum Temperature: ${maxTemperatureCelsius} &#8451</label><br>
-<label id  = "minTemp">Minimum Temperature: ${minTemperatureCelsius} &#8451</label><br>
 
-</div>
 
 
 
@@ -42,6 +37,25 @@
  displayIcon();
  </script>
 
+
+ <c:forEach items="${temperatureDataWithDates}" var="dates">
+    <tr>
+
+           Temperatures as of :  <td>${dates.key}</td>
+           <br>
+            <c:forEach items="${dates.value}" var="temperature" >
+
+            <td>${temperature.key}  - ${temperature.value}</td>
+
+           <br>
+
+            </c:forEach>
+
+        <br>
+      </tr>
+    </c:forEach>
+
+<div>
 Forecast feelsLike : <label id  = " feelsLike">  ${highestVotedComment} </label><br>
 
 
@@ -102,6 +116,7 @@ Forecast feelsLike : <label id  = " feelsLike">  ${highestVotedComment} </label>
      </tr>
    </c:forEach>
 </table>
+</div>
 </div>
 </div>
 </body>
