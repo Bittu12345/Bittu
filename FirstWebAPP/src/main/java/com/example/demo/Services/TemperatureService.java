@@ -8,10 +8,7 @@ import com.example.demo.model.Weather;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
@@ -36,7 +33,7 @@ public class TemperatureService {
             if (addedDays.get() == numberOfDays) break;
         }
 
-        return temperatureDataMapWithDates;
+        return new TreeMap<>(temperatureDataMapWithDates);
     }
 
     public void getTemperatureData(OpenWeatherAPIModel openWeatherAPIModel) {
