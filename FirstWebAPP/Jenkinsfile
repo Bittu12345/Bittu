@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    tools {
+        maven 'Maven 3.8.3'
+        jdk 'JDK'
+    }
+    stages {
+        stage('Initialize') {
+            steps {
+
+                bat 'echo "PATH = ${PATH}'
+
+
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn -f FirstWebApp clean package'
+                bat 'mvn -f FirstWebApp -Dmaven.test.failure.ignore=true install'
+            }
+            // post {
+            //     success {
+
+            //     }
+            // }
+        }
+    }
+}
