@@ -19,11 +19,6 @@ pipeline {
                 bat 'mvn -f FirstWebApp clean package'
                 bat 'mvn -f FirstWebApp -Dmaven.test.failure.ignore=true install'
             }
-            // post {
-            //     success {
-
-            //     }
-            // }
         }
 
         stage('Test'){
